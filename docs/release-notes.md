@@ -2,8 +2,5 @@
 
 ## 0.1.0
 
-### Added
-
-### Changed
-
-### Fixed
+Initial release of the Backgrounder with all the information
+about the Task and Tasks.
