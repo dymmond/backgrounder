@@ -3,19 +3,24 @@ import pytest
 from backgrounder.decorator import background
 from backgrounder.tasks import Task
 
-# @background
-# async def work(number):
-#     # Do something expensive here.
-#     return number
+GLOBAL = 0
+
+pytestmark = pytest.mark.anyio
 
 
-# @pytest.mark.anyio
-# async def test_decorator_async():
-#     result = await work(2)
-#     assert result == 2
+async def test_decorator_async():
+    TOTAL = 0
+
+    @background
+    async def work():
+        # Do something expensive here.
+        nonlocal TOTAL
+        TOTAL = 1
+
+    await work()
+    assert TOTAL == 1
 
 
-@pytest.mark.asyncio
 async def test_task():
     TOTAL = 0
 
@@ -33,7 +38,6 @@ async def test_task():
     assert TOTAL == 1
 
 
-@pytest.mark.asyncio
 async def test_task_blocking():
     TOTAL = 0
 

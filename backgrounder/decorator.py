@@ -1,11 +1,16 @@
+import asyncio
 import functools
 from typing import Any, Callable
 
 import anyio.from_thread
 import anyio.to_thread
+import nest_asyncio
 import sniffio
 
+from backgrounder.concurrency import AsyncCallable
 from backgrounder.tasks import Task
+
+nest_asyncio.apply()
 
 
 def background(fn: Callable[..., Any]) -> Callable[..., Any]:
@@ -24,7 +29,9 @@ def background(fn: Callable[..., Any]) -> Callable[..., Any]:
         task = Task(fn, *args, **kwargs)
         try:
             sniffio.current_async_library()
-            return anyio.from_thread.run(fn, *args, **kwargs)
+            async_callable = AsyncCallable(fn)
+            loop = asyncio.get_event_loop()
+            return loop.run_until_complete(async_callable(*args, **kwargs))
         except sniffio.AsyncLibraryNotFoundError:
             return anyio.run(task)
 
