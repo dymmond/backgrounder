@@ -2,9 +2,6 @@
 
 Do you like **Backgrounder** and would like to help Backgrounder, other user and the author?
 
-## 🐦 Follow Backgrounder on Twitter
-
-
 ## ⭐ Star **Backgrounder** on GitHub
 
 Giving a star to Backgrounder is very simple and helps promoting the work across the developers around the world.
@@ -23,6 +20,11 @@ You can click on "***watch***" and select "***custom***" -> "***Releases***"or a
 interesting to you.
 
 ## 💬 Join the official Backgrounder discord channel
+
+Our official chat is on discord, we find it very useful and free for people to discuss issues, helping and contributing
+in a more organised manner.
+
+<a href="https://discord.gg/eMrM9sWWvu" target="_blank">Backgrounder discord channel</a>. Join us! 🗸
 
 ## 🔥 Sponsor the author
 

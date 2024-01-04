@@ -144,7 +144,6 @@ do not exist natively (by the time of the writting).
 **Backgrounder** also offers a decorator for you to use which can be extremely useful if you don't
 want to use the [Task](./tasks.md#task) object directly, providing a cleaner version out of the box.
 
-
 ```python
 from backgrounder import background
 
