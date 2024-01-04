@@ -69,7 +69,7 @@ class Task(Repr):
             ),
         ],
         *args: Annotated[
-            P.args,
+            Any,
             Doc(
                 """
                 Any arguments of the callable.
@@ -95,7 +95,7 @@ class Task(Repr):
             ),
         ],
         **kwargs: Annotated[
-            P.kwargs,
+            Any,
             Doc(
                 """
                 Any kwyword arguments of the callable.
