@@ -8,21 +8,21 @@ theme:
   language: en
   palette:
     - scheme: "default"
-      primary: "purple"
-      accent: "amber"
+      primary: "black"
+      accent: "blue grey"
       media: "(prefers-color-scheme: light)"
       toggle:
-            icon: "material/lightbulb"
-            name: "Switch to dark mode"
+        icon: "material/lightbulb"
+        name: "Switch to dark mode"
     - scheme: "slate"
       media: "(prefers-color-scheme: dark)"
-      primary: "purple"
-      accent: "amber"
+      primary: "black"
+      accent: "blue grey"
       toggle:
-            icon: "material/lightbulb-outline"
-            name: "Switch to light mode"
+        icon: "material/lightbulb-outline"
+        name: "Switch to light mode"
   favicon: statics/images/favicon.ico
-  logo: statics/images/logo-white.svg
+  logo: statics/images/gray-10.png
   features:
     - search.suggest
     - search.highlight
@@ -46,6 +46,7 @@ plugins:
 
 nav:
   - Introduction: "index.md"
+  - Tasks: "tasks.md"
   - Contributing: "contributing.md"
   - Sponsorship: "sponsorship.md"
   - Release Notes: "release-notes.md"
