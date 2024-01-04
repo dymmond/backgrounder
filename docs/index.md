@@ -24,7 +24,7 @@
 
 ---
 
-**Documentation**: [https://backgrounder.dymmond.com](https://www.backgrounder.dymmond.com) 📚
+**Documentation**: [https://backgrounder.dymmond.com](https://backgrounder.dymmond.com) 📚
 
 **Source Code**: [https://github.com/dymmond/backgrounder](https://github.com/dymmond/backgrounder)
 
