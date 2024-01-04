@@ -51,6 +51,8 @@ background tasks, which means you can even use it with [Esmerald][esmerald], [Fa
 without using the native version of each framework but **also allows** to run this inside anything else
 like **Django** for example.
 
+**Due to the nature of the package, this is only available from Python 3.10+.**
+
 ## How to use it
 
 This package is actually very simple to use it, really, there is no rocket science since the
