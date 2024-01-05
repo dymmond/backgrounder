@@ -1,11 +1,25 @@
+import asyncio
 import functools
-from typing import Any, Awaitable, Callable, TypeVar
+from concurrent import futures
+from typing import Any, Awaitable, Callable, Coroutine, TypeVar
 
 import anyio.to_thread
 
 from backgrounder._compat import is_async_callable
 
 T = TypeVar("T")
+
+
+def run_sync(async_function: Coroutine) -> Any:
+    """
+    Runs the queries in sync mode
+    """
+    try:
+        return asyncio.run(async_function)
+    except RuntimeError:
+        with futures.ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(asyncio.run, async_function)
+            return future.result()
 
 
 async def run_in_threadpool(func: Callable[..., T], *args: Any, **kwargs: Any) -> T:

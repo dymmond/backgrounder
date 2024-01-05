@@ -1,4 +1,3 @@
-import asyncio
 import functools
 from typing import Any, Callable
 
@@ -7,7 +6,7 @@ import anyio.to_thread
 import nest_asyncio
 import sniffio
 
-from backgrounder.concurrency import AsyncCallable
+from backgrounder.concurrency import AsyncCallable, run_sync
 from backgrounder.tasks import Task
 
 nest_asyncio.apply()
@@ -25,13 +24,11 @@ def background(fn: Callable[..., Any]) -> Callable[..., Any]:
         The wrapper covers for the decorator as individual as
         well as coming from the classes.
         """
-
         task = Task(fn, *args, **kwargs)
         try:
             sniffio.current_async_library()
             async_callable = AsyncCallable(fn)
-            loop = asyncio.get_event_loop()
-            return loop.run_until_complete(async_callable(*args, **kwargs))
+            return run_sync(async_callable(*args, **kwargs))  # type: ignore
         except sniffio.AsyncLibraryNotFoundError:
             return anyio.run(task)
 
