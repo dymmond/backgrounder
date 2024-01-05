@@ -8,7 +8,7 @@ You can use the [Task](#task) and [Task](#tasks) with any ASGI framework as if i
 This can be useful for those operations that need to happen after the request without blocking the
 client (the client doesn't have to wait to complete) from receiving that same response.
 
-Our you can simply run them as non-blocking operations without relying on any ASGI framework,
+Also you can simply run them as non-blocking operations without relying on any ASGI framework,
 simple Python background tasks.
 
 ::: backgrounder.Task
