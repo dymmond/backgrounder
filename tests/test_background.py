@@ -7,8 +7,7 @@ from esmerald.testclient import EsmeraldTestClient
 from backgrounder.tasks import Task, Tasks
 
 
-class TaskException(Exception):
-    ...
+class TaskException(Exception): ...
 
 
 def test_async_task(test_client_factory):
