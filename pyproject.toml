@@ -103,7 +103,7 @@ strict_equality = false
 strict_optional = false
 
 
-[tool.ruff]
+[tool.ruff.lint]
 select = [
     "E", # pycodestyle errors
     "W", # pycodestyle warnings
